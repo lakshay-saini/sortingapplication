@@ -25,7 +25,6 @@ public class InputReader  {
             InputStream inputStream = InputReader.class.getResourceAsStream(FILE_NAME);
             String input = IOUtils.toString(inputStream);
             ArrayList<String> wordsList = new ArrayList<>();
-            System.out.println("input = " + input);
             Matcher matcher = Pattern.compile("\\w+").matcher(input);
             while (matcher.find()) {
                 wordsList.add(matcher.group());
@@ -35,9 +34,5 @@ public class InputReader  {
             e.printStackTrace();
             return null;
         }
-    }
-
-    public static void main(String[] args) {
-        new InputReader().readFile();
     }
 }

@@ -26,7 +26,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>com.example.filereader.InputReader</mainClass>
+                            <mainClass>com.example.filereader.Application</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
