@@ -20,7 +20,7 @@ public class InputReader  {
 
     private static final String FILE_NAME = "/story.txt";
 
-    public void readFile(){
+    public Map<String, Long> readFile(){
         try {
             InputStream inputStream = InputReader.class.getResourceAsStream(FILE_NAME);
             String input = IOUtils.toString(inputStream);
@@ -30,12 +30,10 @@ public class InputReader  {
             while (matcher.find()) {
                 wordsList.add(matcher.group());
             }
-            Map<String, Long> collect =
-                    wordsList.stream().collect(groupingBy(Function.identity(), counting()));
-
-            System.out.println("collect = " + collect);
+            return wordsList.stream().collect(groupingBy(Function.identity(), counting()));
         } catch (IOException e) {
             e.printStackTrace();
+            return null;
         }
     }
 
